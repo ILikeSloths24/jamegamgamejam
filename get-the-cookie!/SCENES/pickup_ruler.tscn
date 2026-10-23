@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://4xrcam63xksl"]
+
+[ext_resource type="PackedScene" uid="uid://cvpcmqvh6emws" path="res://ASSETS/Blender assets/ruler.glb" id="1_ofx11"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u54cc"]
+size = Vector3(3.533081, 1, 16.13208)
+
+[node name="PickupRuler" type="RigidBody3D" unique_id=1161360837 groups=["pickupable"]]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1832000053]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011291504, 0, -0.03137207)
+shape = SubResource("BoxShape3D_u54cc")
+
+[node name="ruler" parent="." unique_id=144188739 instance=ExtResource("1_ofx11")]
+transform = Transform3D(0.4276396, 0, 0, 0, 0.4839917, 0, 0, 0, 0.4039995, 0, 0, 0)

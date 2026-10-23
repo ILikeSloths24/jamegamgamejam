@@ -31,7 +31,7 @@ func pick_up_object():
 				$Camera3D/HoldPoint.add_child(held_object)
 
 				held_object.position = Vector3.ZERO
-				held_object.rotation = Vector3.ZERO
+				held_object.rotation_degrees = Vector3(0, 90, 0)
 				return
 
 func drop_object():
@@ -64,7 +64,7 @@ func attach_object():
 				body.global_position
 			)
 
-			if distance < 1.5:
+			if distance < 5:
 				target = body
 				break
 
@@ -74,11 +74,12 @@ func attach_object():
 
 	var book = held_object
 	var saved_transform = book.global_transform
+
+	held_object = null
 	$Camera3D/HoldPoint.remove_child(book)
 	get_tree().current_scene.add_child(book)
 	book.global_transform = saved_transform
 	book.freeze = false
-	held_object = null
 
 	var joint = Generic6DOFJoint3D.new()
 	get_tree().current_scene.add_child(joint)

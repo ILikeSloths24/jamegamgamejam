@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bleeghy26oxvb" path="res://SCENES/player.tscn" id="1_y50dn"]
 [ext_resource type="PackedScene" uid="uid://cf1qwxa04ldje" path="res://SCENES/pickup_book.tscn" id="2_pioda"]
+[ext_resource type="PackedScene" uid="uid://4xrcam63xksl" path="res://SCENES/pickup_ruler.tscn" id="3_pioda"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eplht"]
 size = Vector3(30, 1, 30)
@@ -32,7 +33,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.792448, 1.5, 6.5857334)
 transform = Transform3D(0.8660254, 0.35355338, -0.35355338, 0, 0.70710677, 0.70710677, 0.5, -0.6123724, 0.6123724, 0, 0, 0)
 
 [node name="StaticBody3D" parent="." unique_id=608150814 instance=ExtResource("2_pioda")]
-transform = Transform3D(2.6621242, 0, 0, 0, 9.356573, 0, 0, 0, 1.7352014, 8.002001, 2.3369746, 2.9818537)
+transform = Transform3D(1.3909649, 0, 0, 0, 2.7365875, 0, 0, 0, 1.1783447, 8.002001, 1.2949586, 2.9818537)
 
 [node name="PickupBook" parent="." unique_id=1728133733 instance=ExtResource("2_pioda")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5456705, 2.1136904, 1.6897416)
+
+[node name="PickupRuler" parent="." unique_id=1161360837 instance=ExtResource("3_pioda")]
+transform = Transform3D(0.6877746, 0, 0, 0, 0.8060161, 0, 0, 0, 0.6209987, -9, 1, 5)
