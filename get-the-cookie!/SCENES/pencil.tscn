@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cbovklnxac2l2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eipsx"]
+albedo_color = Color(0.99582535, 0.23160645, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3aifs"]
+albedo_color = Color(1, 0, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nsp37"]
+albedo_color = Color(1, 0.6862745, 0.34117648, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o1q2l"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_eipsx"]
+height = 13.098145
+
+[node name="Pencil" type="Node3D" unique_id=794194348]
+transform = Transform3D(1, 0, 0, 0, 0.7502925, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=958847161]
+transform = Transform3D(1, 0, 0, 0, -5.1864815, -0.009232779, 0, 0.04788768, -0.9999574, 0, -3.621108, 0.016716802)
+material_override = SubResource("StandardMaterial3D_eipsx")
+sides = 19
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="." unique_id=2040690791]
+transform = Transform3D(1, 0, 0, 0, -0.47669506, -0.009232779, 0, 0.0044014077, -0.9999574, 0, -9.266054, 0.06883756)
+material_override = SubResource("StandardMaterial3D_3aifs")
+sides = 19
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="." unique_id=872332580]
+transform = Transform3D(-1, -8.742278e-08, 0, -8.741905e-08, 0.9999574, -0.009232779, 8.071552e-10, -0.009232779, -0.9999574, 0, 2.5570946, -0.04032761)
+material_override = SubResource("StandardMaterial3D_nsp37")
+sides = 19
+cone = true
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="." unique_id=2055898390]
+transform = Transform3D(-1, -8.742278e-08, 0, -8.741905e-08, 0.9999574, -0.009232779, 8.071552e-10, -0.009232779, -0.9999574, 3.8738364e-08, 3.087697, -0.045226753)
+material_override = SubResource("StandardMaterial3D_o1q2l")
+radius = 0.26513672
+height = 1.1137695
+sides = 19
+cone = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=249641925]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=28200821]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.086182, 0)
+shape = SubResource("CylinderShape3D_eipsx")

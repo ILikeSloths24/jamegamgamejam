@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b3dtr11cgdbxs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vbkcq"]
+albedo_color = Color(0.24586514, 0.32365078, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vbkcq"]
+
+[node name="PickupBook" type="RigidBody3D" unique_id=1728133733 groups=["pickupable"]]
+continuous_cd = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1525268440]
+material_override = SubResource("StandardMaterial3D_vbkcq")
+size = Vector3(1.5, 1, 1.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=284665959]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_vbkcq")
+
+[node name="AttatchArea" type="Area3D" parent="." unique_id=401779342]
+transform = Transform3D(0.9130798, 0, 0, 0, 1, 0, 0, 0, 1, -0.00498157, 0, 0)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="AttatchArea" unique_id=842600267]
+transform = Transform3D(1.7, 0, 0, 0, 1.035, 0, 0, 0, 1.552, 0.005455788, 0, 0)
+shape = SubResource("BoxShape3D_vbkcq")

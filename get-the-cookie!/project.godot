@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Get the cookie!"
+run/main_scene="uid://n4s0sfv7ggbd"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

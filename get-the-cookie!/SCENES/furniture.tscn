@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ihlxu8m8sxia"]
+
+[ext_resource type="PackedScene" uid="uid://8t51b2214upv" path="res://ASSETS/INTERNET IMPORTED FILES/furniture_collection.glb" id="1_fi3s8"]
+
+[node name="Node3D" type="Node3D" unique_id=28192780]
+
+[node name="Sketchfab_Scene" parent="." unique_id=1825758940 instance=ExtResource("1_fi3s8")]
+transform = Transform3D(0.48456776, 0, 0, 0, 0.49025744, 0, 0, 0, 0.47319257, -2.1203723, 0, 0.74206734)
+
+[editable path="Sketchfab_Scene"]

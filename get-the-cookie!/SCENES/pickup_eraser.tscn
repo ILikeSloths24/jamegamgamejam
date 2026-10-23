@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://b3xj2crjkl3cf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3mlx5"]
+albedo_color = Color(1, 0, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7oi8n"]
+size = Vector3(8.709, 0.364, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t56jo"]
+size = Vector3(8.721, 0.4, 2.1)
+
+[node name="PickupBook" type="RigidBody3D" unique_id=1728133733 groups=["pickupable"]]
+transform = Transform3D(0.13193053, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+continuous_cd = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=763752817]
+transform = Transform3D(-4.2744286e-08, 0, 4.262849, 0, 1, 0, -0.9778753, 0, -1.8633506e-07, 0.45343688, -0.3394719, 1.9316423)
+material_override = SubResource("StandardMaterial3D_3mlx5")
+size = Vector3(2.0959492, 0.364, 2)
+
+[node name="Label3D" type="Label3D" parent="CSGBox3D" unique_id=1813544393]
+transform = Transform3D(-1.0000017, 1.7613036e-07, 3.821378e-15, 0, -8.8065136e-08, 1.0000018, 8.742292e-08, 2.0146956, 4.3711466e-08, 0.020075321, 0.1825978, -0.0005221367)
+pixel_size = 0.009
+text = "ERASER
+"
+font_size = 46
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=993532036]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11695283, -0.24768838, 1.9098837)
+shape = SubResource("BoxShape3D_7oi8n")
+
+[node name="AttatchArea" type="Area3D" parent="." unique_id=401779342]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttatchArea" unique_id=1564229559]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10103676, -0.3189687, 1.9234618)
+shape = SubResource("BoxShape3D_t56jo")

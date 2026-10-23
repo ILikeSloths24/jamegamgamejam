@@ -9,14 +9,49 @@ extends CharacterBody3D
 @onready var camera: Camera3D = $Camera3D
 @onready var hold_point: Marker3D = $Camera3D/HoldPoint
 @onready var pickup_area: Area3D = $PickupArea
+@onready var interaction_ray: RayCast3D = $Camera3D/InteractionRay
 
+var looked_at_object: RigidBody3D = null
 var held_object: RigidBody3D = null
+var welded_objects: Dictionary = {}
 var camera_pitch: float = 0.0
+var outline_material: ShaderMaterial
+var outlined_object: RigidBody3D = null
 
+func update_look_target():
+	interaction_ray.force_raycast_update()
+
+	print("Ray colliding: ", interaction_ray.is_colliding())
+
+	var new_target: RigidBody3D = null
+
+	if interaction_ray.is_colliding():
+		var hit = interaction_ray.get_collider()
+		print("Ray hit: ", hit.name)
+
+		if hit is RigidBody3D and hit.is_in_group("pickupable"):
+			new_target = hit
+
+	if new_target != outlined_object:
+		if outlined_object != null:
+			set_outline(outlined_object, null)
+
+		outlined_object = new_target
+
+		if outlined_object != null:
+			set_outline(outlined_object, outline_material)
+	looked_at_object = new_target
+func set_outline(node: Node, material: Material):
+	if node is GeometryInstance3D:
+		node.material_overlay = material
+
+	for child in node.get_children():
+		set_outline(child, material)
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
+	outline_material = ShaderMaterial.new()
+	outline_material.shader = load("res://outline.gdshader")
 
 func _input(event):
 	if event is InputEventKey:
@@ -108,28 +143,18 @@ func attach_object():
 		return
 
 	var object = held_object
-
-	# Save its position before removing it from the grip.
 	var saved_transform = object.global_transform
-
-	# Clear the player's grip.
 	held_object = null
-
-	# Remove it from the camera's HoldPoint.
 	hold_point.remove_child(object)
-
-	# Attach it to the target object.
 	get_tree().current_scene.add_child(object)
 	object.global_transform = saved_transform
-
-	# Stop physics from moving it.
 	object.freeze = true
 	object.linear_velocity = Vector3.ZERO
 	object.angular_velocity = Vector3.ZERO
-
 	print("Object permanently attached!")
 
 func _physics_process(delta):
+	update_look_target()
 	var input_direction = Vector2.ZERO
 
 	if Input.is_action_pressed("move_forward"):

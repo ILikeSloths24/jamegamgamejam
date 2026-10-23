@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bfdcs3tgdr336"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ll8j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xm4xb"]
+size = Vector3(8.703789, 2.586975, 5.5012817)
+
+[node name="Node3D" type="Node3D" unique_id=871487666]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1770490092]
+transform = Transform3D(1.066063, 0, 0, 0, 1.066063, 0, 0, 0, 1.066063, -0.523258, -0.2508996, 2.204123)
+size = Vector3(8.117737, 0.5292969, 5.135071)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=1944153513]
+transform = Transform3D(1.066063, 0, 0, 0, 1.066063, 0, 0, 0, 1.066063, -0.5291872, 0.5959516, 1.8754923)
+size = Vector3(7.9242096, 2.118042, 4.396805)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1355916018]
+transform = Transform3D(1.066063, 0, 0, 0, 1.066063, 0, 0, 0, 1.066063, -0.523258, 1.7822459, 2.204123)
+material_override = SubResource("StandardMaterial3D_7ll8j")
+size = Vector3(8.117737, 0.5292969, 5.135071)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=922274452]
+transform = Transform3D(1.06, 0, 0, 0, 1.06, 0, 0, 0, 1.06, -0.523258, 0.77994883, 4.5997877)
+size = Vector3(8.117737, 2.409668, 0.6406555)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=291428719]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=772786535]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5194359, 0.79348755, 2.195282)
+shape = SubResource("BoxShape3D_xm4xb")
