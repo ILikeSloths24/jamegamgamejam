@@ -7,6 +7,7 @@ size = Vector3(8.5979, 0.3, 1)
 size = Vector3(8.7208, 0.4, 1.1)
 
 [node name="PickupBook" type="RigidBody3D" unique_id=1728133733 groups=["pickupable"]]
+transform = Transform3D(0.13193053, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 continuous_cd = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=763752817]

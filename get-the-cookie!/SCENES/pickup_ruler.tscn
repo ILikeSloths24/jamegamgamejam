@@ -1,16 +1,37 @@
 [gd_scene format=3 uid="uid://4xrcam63xksl"]
 
-[ext_resource type="PackedScene" uid="uid://cvpcmqvh6emws" path="res://ASSETS/Blender assets/ruler.glb" id="1_ofx11"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_7oi8n"]
+size = Vector3(8.5979, 0.39658204, 1.4671631)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_u54cc"]
-size = Vector3(3.533081, 1, 16.13208)
+[sub_resource type="BoxShape3D" id="BoxShape3D_t56jo"]
+size = Vector3(8.7208, 0.4, 1.3619751)
 
-[node name="PickupRuler" type="RigidBody3D" unique_id=1161360837 groups=["pickupable"]]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+[node name="PickupBook" type="RigidBody3D" unique_id=1728133733 groups=["pickupable"]]
+continuous_cd = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1832000053]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011291504, 0, -0.03137207)
-shape = SubResource("BoxShape3D_u54cc")
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=763752817]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09509277, -0.3182373, 1.8718052)
+size = Vector3(8, 0.4, 1)
 
-[node name="ruler" parent="." unique_id=144188739 instance=ExtResource("1_ofx11")]
-transform = Transform3D(0.4276396, 0, 0, 0, 0.4839917, 0, 0, 0, 0.4039995, 0, 0, 0)
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=1243255095]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.10028076, -0.38348126, 2.3681862)
+radius = 0.26513672
+height = 8.007446
+sides = 3
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="." unique_id=1742568519]
+transform = Transform3D(4.371139e-08, 1, -8.742278e-08, 1, -4.371139e-08, 0, -3.821371e-15, -8.742278e-08, -1, -0.1, -0.383, 1.37)
+radius = 0.26513672
+height = 8.007446
+sides = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=993532036]
+transform = Transform3D(0.9130798, 0, 0, 0, 1, 0, 0, 0, 1, -0.10964245, -0.3268165, 1.8629069)
+shape = SubResource("BoxShape3D_7oi8n")
+
+[node name="AttatchArea" type="Area3D" parent="." unique_id=401779342]
+transform = Transform3D(0.9130798, 0, 0, 0, 1, 0, 0, 0, 1, -0.00498157, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttatchArea" unique_id=1564229559]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10151398, -0.30936623, 1.8821819)
+shape = SubResource("BoxShape3D_t56jo")
