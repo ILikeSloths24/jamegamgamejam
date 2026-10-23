@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cf1qwxa04ldje"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_c7pwc"]
+size = Vector3(1.5, 0.3, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7oi8n"]
+size = Vector3(1.5, 0.3, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t56jo"]
+size = Vector3(1.6, 0.4, 1.1)
+
+[node name="PickupBook" type="RigidBody3D" unique_id=1728133733 groups=["pickupable"]]
+continuous_cd = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=167578958]
+mesh = SubResource("BoxMesh_c7pwc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=993532036]
+shape = SubResource("BoxShape3D_7oi8n")
+
+[node name="AttatchArea" type="Area3D" parent="." unique_id=401779342]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttatchArea" unique_id=1564229559]
+shape = SubResource("BoxShape3D_t56jo")

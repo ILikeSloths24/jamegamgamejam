@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://n4s0sfv7ggbd"]
+
+[ext_resource type="PackedScene" uid="uid://bleeghy26oxvb" path="res://SCENES/player.tscn" id="1_y50dn"]
+[ext_resource type="PackedScene" uid="uid://cf1qwxa04ldje" path="res://SCENES/pickup_book.tscn" id="2_pioda"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eplht"]
+size = Vector3(30, 1, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_c312q"]
+size = Vector3(30, 1, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_arpwl"]
+
+[node name="Node3D" type="Node3D" unique_id=1179335009]
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=402134622]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1567542334]
+shape = SubResource("BoxShape3D_eplht")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=1661189118]
+mesh = SubResource("BoxMesh_c312q")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Floor" unique_id=1369196430]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1268601, 0)
+mesh = SubResource("BoxMesh_arpwl")
+
+[node name="Player" parent="." unique_id=1457212804 instance=ExtResource("1_y50dn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.792448, 1.5, 6.5857334)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1654398246]
+transform = Transform3D(0.8660254, 0.35355338, -0.35355338, 0, 0.70710677, 0.70710677, 0.5, -0.6123724, 0.6123724, 0, 0, 0)
+
+[node name="StaticBody3D" parent="." unique_id=608150814 instance=ExtResource("2_pioda")]
+transform = Transform3D(2.6621242, 0, 0, 0, 9.356573, 0, 0, 0, 1.7352014, 8.002001, 2.3369746, 2.9818537)
+
+[node name="PickupBook" parent="." unique_id=1728133733 instance=ExtResource("2_pioda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5456705, 2.1136904, 1.6897416)

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bleeghy26oxvb"]
+
+[ext_resource type="Script" uid="uid://djlwa5k4k23pj" path="res://player.gd" id="1_4flbx"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_onrkg"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i3pqv"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_85nbx"]
+radius = 2.5
+
+[node name="Player" type="CharacterBody3D" unique_id=1457212804]
+script = ExtResource("1_4flbx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1042821882]
+mesh = SubResource("CapsuleMesh_onrkg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1451321665]
+shape = SubResource("CapsuleShape3D_i3pqv")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2035883761]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4983434, 0)
+
+[node name="HoldPoint" type="Marker3D" parent="Camera3D" unique_id=319712796]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -3.515294)
+
+[node name="PickupArea" type="Area3D" parent="." unique_id=689990859]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickupArea" unique_id=1844485662]
+shape = SubResource("SphereShape3D_85nbx")
